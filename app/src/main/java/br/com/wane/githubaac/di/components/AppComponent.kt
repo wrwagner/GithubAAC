@@ -2,9 +2,7 @@ package br.com.wane.githubaac.di.components
 
 import android.app.Application
 import br.com.wane.githubaac.MyApp
-import br.com.wane.githubaac.di.modules.ActivityModule
-import br.com.wane.githubaac.di.modules.AppModule
-import br.com.wane.githubaac.di.modules.FragmentModule
+import br.com.wane.githubaac.di.modules.*
 
 
 import dagger.BindsInstance
@@ -18,7 +16,9 @@ import javax.inject.Singleton
             AndroidSupportInjectionModule::class,
             ActivityModule::class,
             FragmentModule::class,
-            AppModule::class]
+            ViewModelModule::class,
+            RepositoryModule::class
+        ]
 )
 interface AppComponent {
 

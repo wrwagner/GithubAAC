@@ -22,6 +22,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "app"
+
+    productFlavors {
+        prod {
+            dimension "app"
+            buildConfigField "String", "GITHUB_URL", '"https://api.github.com/"'
+        }
+
+        dev {
+            applicationIdSuffix".dev"
+            dimension "app"
+            buildConfigField "String", "GITHUB_URL", '"https://api.github.com/"'
+        }
+    }
 }
 
 dependencies {
@@ -57,4 +72,8 @@ dependencies {
 
     // GLIDE - Manipulação de imagens
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // STETHO - Debug
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
 }
